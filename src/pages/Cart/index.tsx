@@ -24,7 +24,6 @@ const Cart = (): JSX.Element => {
     ...product,
     priceFormatted: formatPrice(product.price),
     subTotal: formatPrice(product.price * product.amount),
-    // TODO
   }));
 
   const total = formatPrice(
@@ -34,17 +33,17 @@ const Cart = (): JSX.Element => {
   );
 
   function handleProductIncrement(product: Product) {
+    //aqui simplesmente acho meu updateProductAmount e passo id e o product.amount já incrementado
     updateProductAmount({ productId: product.id, amount: product.amount + 1 });
   }
 
   function handleProductDecrement(product: Product) {
+    //aqui simplesmente acho meu updateProductAmount e passo id e o product.amount já incrementado
     updateProductAmount({ productId: product.id, amount: product.amount - 1 });
-    // TODO
   }
 
   function handleRemoveProduct(productId: number) {
     removeProduct(productId);
-    // TODO
   }
 
   return (

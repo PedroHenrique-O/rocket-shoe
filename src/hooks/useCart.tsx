@@ -100,10 +100,12 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       //então caso >0 foi encontrado
 
       if (productIndex > 0) {
-        newCart.splice(productIndex, 1);
+        //removo o item pelo index
 
+        newCart.splice(productIndex, 1);
         setCart(newCart);
         localStorage.setItem("@RocketShoes:cart", JSON.stringify(newCart));
+        //seto o cart atualizado
       } else {
         throw Error();
       }
@@ -116,28 +118,40 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     productId,
     amount,
   }: UpdateProductAmount) => {
+    // primeiramente verifico há amount
     try {
       if (amount <= 0) {
+        console.log("amount verify");
         return;
       }
 
+      //busco o produto em stock pelo id
       const stock = await api.get(`/stock/${productId}`);
+
+      //atribuo o amount do stock
       const stockAmount = stock.data.amount;
 
+      //aqui verifico se o amount do argumento > amount do stock
       if (amount > stockAmount) {
         toast.error("Quantidade solicitada fora de estoque");
         return;
       }
+      // "clono" meu cart para rpeversvar imutabilidade
       const newCart = [...cart];
+      //verifico se o produto do cart bate com o id do argumento e atrubuo o resultado
       const productExists = newCart.find(
         (products) => products.id === productId
       );
+
+      //se há resultado do find acima,
+      //então, dou o update no amount no meu cart específico do find
 
       if (productExists) {
         productExists.amount = amount;
         setCart(newCart);
         localStorage.setItem("@RocketShoes:cart", JSON.stringify(newCart));
       } else {
+        //se por ventura ocorrer algum erro lanço um throw
         throw Error();
       }
     } catch {

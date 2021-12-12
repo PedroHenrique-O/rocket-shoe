@@ -8,6 +8,7 @@ import { useCart } from "../../hooks/useCart";
 
 const Header = (): JSX.Element => {
   const { cart } = useCart();
+  // atribuo o tamanho do meu cart
   const cartSize = cart.length;
 
   return (
