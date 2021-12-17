@@ -8,12 +8,16 @@
 
 <h1>About the application: </h1>
 
-<p>Rocketshoe é um hook de carrinho de compras, onde é possível adicionar produtos ao carrinho e incrementar a quantidade do mesmo.
+<p>Rocketshoe é um desafio obrigatório do bootcamp ignite da @Rocketseat, a aplicação é um hook de carrinho de compras, onde é possível adicionar produtos ao carrinho e incrementar a quantidade do mesmo.
 
 <br/>
 Foi utilizado o json server para simular uma REST api, e assim simular os produtos em estoque. 
 <br/>Não é possível que o usuário selecione a quantidade de produtos maior que disponível no estoque.
 </p>
+
+<h1> How to run tests </h1>
+
+<p> Utilize o comando yarn test para rodar os testes com Jest.</p>
 
 <h1> How to install </h1>
 
