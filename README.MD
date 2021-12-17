@@ -8,10 +8,11 @@
 
 <h1>About the application: </h1>
 
-<p>Rocketshoe é um hook de carrinho de compras, onde é possível adicionar produtos ao carrinho e incrementar a quantidade do mesmo, com base nas quantidade de produtos disponíveis no estoque.
+<p>Rocketshoe é um hook de carrinho de compras, onde é possível adicionar produtos ao carrinho e incrementar a quantidade do mesmo.
 
 <br/>
-Foi utilizado o json server para simular uma REST api, e assim simular o controle de estoque.
+Foi utilizado o json server para simular uma REST api, e assim simular os produtos em estoque. 
+<br/>Não é possível que o usuário selecione a quantidade de produtos maior que disponível no estoque.
 </p>
 
 <h1> How to install </h1>
