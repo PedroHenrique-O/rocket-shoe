@@ -16,5 +16,5 @@ Foi utilizado o json server para simular uma REST api, e assim simular o control
 
 <h1> How to install </h1>
 
-<h3> > Use o comando yarn ou npm install para instalar as dependências do projeto. </h3>
-<h3> > Inicie o json server com o comando yarn server e em seguida o projeto com yarn start. </h3>
+<p> > Use o comando yarn ou npm install para instalar as dependências do projeto. </p>
+<p> > Inicie o json server com o comando yarn server e em seguida o projeto com yarn start. </p>
