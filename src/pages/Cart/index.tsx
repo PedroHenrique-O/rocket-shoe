@@ -20,6 +20,8 @@ interface Product {
 const Cart = (): JSX.Element => {
   const { cart, removeProduct, updateProductAmount } = useCart();
 
+  // aqui itero o cart e retorno um novo cart com os itens finais formtatados para display
+
   const cartFormatted = cart.map((product) => ({
     ...product,
     priceFormatted: formatPrice(product.price),
@@ -27,6 +29,10 @@ const Cart = (): JSX.Element => {
   }));
 
   const total = formatPrice(
+    //uso o reducer para retornar o total
+    // acumulador sumTotal inicializado zerado
+    // o callback meu acumulador com o price * amount
+
     cart.reduce((sumTotal, product) => {
       return sumTotal + product.price * product.amount;
     }, 0)
